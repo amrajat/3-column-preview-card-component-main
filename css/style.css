@@ -1,0 +1,156 @@
+:root {
+  /* COLORS */
+  --color-primary-orange: hsl(31, 77%, 52%);
+  --color-primary-cyan: hsl(184, 100%, 22%);
+  --color-primary-cyan-dark: hsl(179, 100%, 13%);
+  /* Paragraphs */
+  --color-neutral-white: hsla(0, 0%, 100%, 0.75);
+  /* Backgrounds, Headings, Buttons */
+  --color-neutral-gray: hsl(0, 0%, 95%);
+  /* FONTS */
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-text: "Lexend Deca", sans-serif;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-text);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--color-neutral-white);
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 56.25rem) 1fr;
+  place-items: center;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.cards {
+  grid-column: 2 / span 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.7rem, 1fr));
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card {
+  padding: 2.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+.card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  color: var(--color-neutral-gray);
+}
+
+.card--1 {
+  background-color: var(--color-primary-orange);
+}
+.card--1 > button {
+  color: var(--color-primary-orange);
+}
+
+.card--2 {
+  background-color: var(--color-primary-cyan);
+}
+.card--2 > button {
+  color: var(--color-primary-cyan);
+}
+
+.card--3 {
+  background-color: var(--color-primary-cyan-dark);
+}
+.card--3 > button {
+  color: var(--color-primary-cyan-dark);
+}
+
+button {
+  border: 0;
+  border-radius: 62.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-neutral-gray);
+  border: 0.1rem solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+button:hover {
+  color: currentColor;
+  background-color: unset;
+  border: 0.1rem solid var(--color-neutral-gray);
+}
